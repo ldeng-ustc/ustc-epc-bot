@@ -11,7 +11,7 @@ class GUI:
     bot = None
 
     # 版本号
-    version = "v2.1"
+    version = "v2.2"
 
     def __init__(self, master):
         # 设置工作目录, 读取配置文件

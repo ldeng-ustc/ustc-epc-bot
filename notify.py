@@ -35,4 +35,4 @@ class DesktopToaster(ToastNotifier):
 
     def toast(self, subject, content):
         self.show_toast(subject, content, icon_path="python.ico", threaded=True)
-        winsound.PlaySound("chirp.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
+        winsound.PlaySound("./misc/chirp.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
