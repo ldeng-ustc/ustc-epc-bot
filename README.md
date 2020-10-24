@@ -1,7 +1,7 @@
 # 中国科学技术大学EPC系统自动抢课脚本
 
 ![System](https://img.shields.io/badge/System-Windows%2010-brightgreen.svg)
-![Compiler](https://img.shields.io/badge/Build-Python%203.6-brightgreen.svg)
+![Compiler](https://img.shields.io/badge/Build-Python%203.8-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-GPL,%20v3.0-blue.svg)
 
 版本 v2.2 更新日志 by MHY-Silence (2020_10_24):
