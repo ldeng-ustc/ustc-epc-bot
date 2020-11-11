@@ -4,10 +4,8 @@ import requests
 import json
 import threading
 from queue import Queue
-from goto import with_goto
 from bs4 import BeautifulSoup
 from notify import *
-from multiprocessing import Pool
 from gui import *
 
 
