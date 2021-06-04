@@ -57,6 +57,11 @@
     python main.py
     ```
 
+    若需要在命令行运行，使用：
+    ```batch
+    python main.py --no_graphic
+    ```
+
 ## 课表优化算法
 
 - 通过脚本抓取已选课程 Booked 与可选课程 Bookable 的数据.
