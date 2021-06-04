@@ -1,5 +1,7 @@
-import os, inspect
+import os
+import inspect
 import json
+import shutil
 from argparse import ArgumentParser
 from time import sleep
 from bot import EPCBot
