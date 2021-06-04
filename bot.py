@@ -1,5 +1,6 @@
 import time
 import random
+import re
 import requests
 import json
 import threading
@@ -377,7 +378,7 @@ class EPCBot(threading.Thread):
             log_str = time.strftime('%Y-%m-%d %H:%M:%S', log)
         else:
             return
-        print(log_str)
+        print(log_str, flush=True)
 
         # 若开启了GUI, 则同时打印到GUI的控制台
         if self.ui == None:
