@@ -1,10 +1,13 @@
-import winsound
+import platform
 import smtplib, email
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.header import Header
-from win10toast import ToastNotifier
+
+if platform.system() == "Windows":
+    import winsound
+    from win10toast import ToastNotifier
 
 
 class EmailSender:
@@ -28,11 +31,18 @@ class EmailSender:
         smtp.quit()
 
 
-class DesktopToaster(ToastNotifier):
+class DesktopToaster:
+    def __init__(self) -> None:
+        if platform.system() == "Windows":
+            self.toaster = ToastNotifier()
+        else:
+            self.toaster = None
+
 
     def on_destroy(self, hwnd, msg, wparam, lparam):
         pass
 
     def toast(self, subject, content):
-        self.show_toast(subject, content, icon_path="python.ico", threaded=True)
-        winsound.PlaySound("./misc/chirp.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
+        if self.toast is not None:
+            self.toaster.show_toast(subject, content, icon_path="python.ico", threaded=True)
+            winsound.PlaySound("./misc/chirp.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
