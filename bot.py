@@ -132,7 +132,6 @@ class EPCBot(threading.Thread):
                 "_url": form[i].get("action"),           # 表单链接
                 "_new": False                            # 是否为可预约课程
             })
-
         return booked_epc, True
 
     # ================================================================
@@ -208,6 +207,8 @@ class EPCBot(threading.Thread):
             bookable_epc = bookable_epc + res[0]
             success = success or res[1]
 
+        self.print_log("Bookable EPC:")
+        self.print_log(bookable_epc)
         return bookable_epc, success
 
     # ================================================================
