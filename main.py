@@ -29,3 +29,8 @@ else:
     bot.start()
     while True:
         sleep(10)
+        if not bot.is_alive():
+            bot.print_log("Unexpected stop, rebooting")
+            bot.stop()
+            bot = EPCBot(config)
+            bot.start()
