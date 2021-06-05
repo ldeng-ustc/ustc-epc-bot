@@ -7,7 +7,16 @@ from email.header import Header
 
 if platform.system() == "Windows":
     import winsound
-    from win10toast import ToastNotifier
+    # pywin32在venv下会出现问题，运行报错：
+    #    ImportError: DLL load failed while importing win32api: 找不到指定的模块。
+    # 这里若Import失败，提供一个空类以供使用
+    try:
+        from win10toast_click import ToastNotifier
+    except:
+        class ToastNotifier:
+            def show_toast(*args, **kvargs):
+                pass
+
 
 
 class EmailSender:
